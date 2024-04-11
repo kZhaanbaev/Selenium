@@ -1,8 +1,5 @@
 package day01.student;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public class ClassTask2_Solved {
     /**
      * 1. Create a method that takes a String parameter.

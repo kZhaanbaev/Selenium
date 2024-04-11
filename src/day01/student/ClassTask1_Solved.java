@@ -1,8 +1,5 @@
 package day01.student;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public class ClassTask1_Solved {
     /**
      * Set up WebDriver object
