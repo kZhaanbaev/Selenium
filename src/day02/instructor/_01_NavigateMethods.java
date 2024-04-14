@@ -12,13 +12,15 @@ public class _01_NavigateMethods {
         //NAVIGATION METHODS
 
         //1. Navigate to
-
+        driver.navigate().to("https://google.com");
 
         //2. Navigate back
-
+        driver.navigate().to("https://amazon.com");
+        Thread.sleep(1000);
+        driver.navigate().back();
 
         //3. Navigate refresh
-
+        driver.navigate().refresh();
 
         //4. navigate() vs get()
         /*
@@ -27,6 +29,7 @@ public class _01_NavigateMethods {
         of code immediately after opening the browser and entering the URL
          */
 
+        Thread.sleep(2000);
         driver.close();
 
         //NOTE: ClassTask1 after completing of this demo
