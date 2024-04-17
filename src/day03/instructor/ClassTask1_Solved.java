@@ -19,6 +19,28 @@ public class ClassTask1_Solved {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
+        //1. Open automation practice web page
+        driver.get("https://selenium-practice-app.herokuapp.com/#/home");
+
+        //2. Navigate to "Inputs" section of automation website directly
+        driver.findElement(By.linkText("Inputs")).click();
+
+        //3. Enter Message "Hello world"
+        String expectedText = "Hello World!";
+        driver.findElement(By.id("message")).sendKeys(expectedText);
+
+        //4. Click "Show message"
+        driver.findElement(By.name("button1")).click();
+        //driver.findElement(By.className("rounded")).click();
+
+        //5. Verify message displayed is same as expected
+        String actualText = driver.findElement(By.name("message1")).getText();
+
+        if (expectedText.equalsIgnoreCase(actualText)){
+            System.out.println("PASS");
+        }else {
+            System.out.println("FAIL");
+        }
 
         driver.close();
     }
