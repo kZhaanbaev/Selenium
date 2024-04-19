@@ -21,6 +21,18 @@ public class ClassTask1_Solved {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.howstuffworks.com/");
 
+        String[] data = {"Science", "Home & Garden", "Auto", "Culture", "Tech"};
+
+        for (String eachItem: data){
+            driver.findElement(By.linkText(eachItem)).click();
+            Thread.sleep(1000);
+
+            if (driver.findElement(By.tagName("h1")).getText().equalsIgnoreCase(eachItem)){
+                System.out.println("PASS");
+            }else {
+                System.out.println("FAIL");
+            }
+        }
 
         driver.close();
     }

@@ -42,16 +42,15 @@ public class _02_Review {
         data.put("GEAR", "Gear");
         data.put("TOYS", "Cool Toys");
 
-        for (String linkText: data.keySet()){
-            driver.findElement(By.linkText(linkText)).click();
-            if (driver.findElement(By.tagName("h1")).getText().equalsIgnoreCase(data.get(linkText))){
+        for (String each: data.keySet()){
+            driver.findElement(By.linkText(each)).click();
+            if (driver.findElement(By.tagName("h1")).getText().equalsIgnoreCase(data.get(each))){
                 System.out.println("Header test PASS");
             }else {
-                System.out.println(data.get(linkText) + " - Header test FAIL");
-                System.out.println("Expected is " + data.get(linkText) + " | Actual was: " + driver.findElement(By.tagName("h1")).getText());
+                System.out.println(data.get(each) + " - Header test FAIL");
+                System.out.println("Expected is " + data.get(each) + " | Actual was: " + driver.findElement(By.tagName("h1")).getText());
             }
         }
-
 
         driver.close();
 
