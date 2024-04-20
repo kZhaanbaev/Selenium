@@ -16,6 +16,25 @@ public class ClassTask3_Resolved {
         System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-8/libs/chromedriver");
         WebDriver driver = new ChromeDriver();
 
+        driver.get("https://demo.applitools.com/");
+
+        //2
+        driver.findElement(By.cssSelector("input[placeholder='Enter your username']")).sendKeys("test");
+        driver.findElement(By.cssSelector("input[placeholder='Enter your password']")).sendKeys("test");
+
+        //3
+        driver.findElement(By.cssSelector("a[class='btn btn-primary']")).click();
+
+        //4
+        System.out.println(driver.findElement(By.cssSelector(".logged-user-name")).isDisplayed());
+
+        //5
+        if (driver.findElement(By.cssSelector(".logged-user-name")).getText().equalsIgnoreCase("Jack Gomez")){
+            System.out.println("PASS");
+        }else {
+            System.out.println("FAIL");
+        }
+
         driver.close();
     }
 }
