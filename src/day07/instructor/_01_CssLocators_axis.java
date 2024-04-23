@@ -1,7 +1,12 @@
 package day07.instructor;
 
+import _utils.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class _01_CssLocators_axis {
     /**
@@ -12,15 +17,21 @@ public class _01_CssLocators_axis {
      */
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/kuba/TLA/Selenium/B-7/libs/drivers/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://automation.techleadacademy.io/#/selectors");
+        WebDriver driver = Driver.getDriver();
+        driver.get("https://selenium-practice-app.herokuapp.com/#/selectors");
         //1. direct-child
+        /**
+         * parentElement > childElement
+         * tagParent[attr=value]>tagChild[attr=value]
+         */
 
         //a. locating first child of Parent 1
+        System.out.println(driver.findElement(By.cssSelector("div[id=parent1] > div")).getText());
 
         //b. locating both direct children of Parent 1 only
-
+        List<WebElement> parent1ChildList = driver.findElements(By.cssSelector("div[id=parent1] > div"));
+        System.out.println(parent1ChildList.size());
+        parent1ChildList.forEach(each -> System.out.println(each.getText()));
 
         //NOTE: ClassTask1
 
