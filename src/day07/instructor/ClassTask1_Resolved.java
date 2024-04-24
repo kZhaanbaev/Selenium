@@ -1,5 +1,6 @@
 package day07.instructor;
 
+import _utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,15 @@ public class ClassTask1_Resolved {
      */
 
     public static void main(String[] args) {
+        WebDriver driver = Driver.getDriver();
+        driver.get("https://selenium-practice-app.herokuapp.com/#/selectors");
+        List<WebElement> list = driver.findElements(By.cssSelector("div[id=porsche] > div[class='vehicle-types row'] > div"));
 
+        list.forEach(each -> System.out.println(each.getText() + "\n\n"));
+
+        //to find only vehicle type texts, not including vehicle names use below locator
+        //div[id=porsche] > div[class='vehicle-types row'] > div > div[class='vehicle-type']
+
+        driver.close();
     }
 }
