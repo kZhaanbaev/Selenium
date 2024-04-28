@@ -1,5 +1,6 @@
 package day09.instructor;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,6 +11,10 @@ public class _02_Xpath {
         driver.manage().window().maximize();
 
         //working with texts (locating Select-class button on nav bar)
+        //tag[@attr='value'] -> //a[@href='#/selectclass']
+        //tag[text()='value'] -> //div[text()='test']
+
+        driver.findElement(By.xpath("//a[text()='Select-class']"));
 
         //NOTE: ClassTask2
 
