@@ -34,7 +34,7 @@ public class _01_Tables {
         System.out.println(tRows.get(0).getText());
         System.out.println(tRows.get(0).findElement(By.xpath("./td[1]")).getText());
 
-        //Task: Print out value of First names based on if gender is Male (in Tables page)
+        //Class Task 01_A:
 
 
 
