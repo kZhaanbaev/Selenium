@@ -1,6 +1,7 @@
 package day15.instructor;
 
 import _utils.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,6 +12,9 @@ public class _01_iFrames {
         driver.get("https://selenium-practice-app.herokuapp.com/#/iframes");
 
         //1. access TLA website and print main text "Hello! I am the parent iFrame without switching
+        driver.switchTo().frame("parent-iframe");
+        System.out.println(driver.findElement(By.id("iframe-text")).getText());
+
 
         //2. NOTE: README.md file
 
@@ -25,5 +29,7 @@ public class _01_iFrames {
         //6. navigation from one iframe to another, child to parent, etc.
 
         //Class Task 1
+
+        driver.close();
     }
 }

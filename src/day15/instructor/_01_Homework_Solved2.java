@@ -7,17 +7,16 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class _01_Homework_Solved {
+public class _01_Homework_Solved2 {
     /**
      * 	Print out age + emails if age of the person is between 40 and 50 (from all 10 pages)
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = Driver.getDriver();
         driver.manage().window().maximize();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/tables");
 
-        //to iterate over each page
-        for (int i = 0; i < 10; i++){
+        while(driver.findElement(By.xpath("//span[text()='Next']")).isDisplayed()){
             //find items on each page
             List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
             for (WebElement each: rows){
@@ -31,6 +30,7 @@ public class _01_Homework_Solved {
 
             //click next
             driver.findElement(By.xpath("//span[text()='Next']")).click();
+            Thread.sleep(1000);
         }
 
         driver.close();
