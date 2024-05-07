@@ -1,6 +1,6 @@
-package day14.student;
+package day15.student;
 
-public class _02_ClassTask {
+public class _01_ClassTask {
 
     /**
      * 		a. Open practice website -> iframes section
