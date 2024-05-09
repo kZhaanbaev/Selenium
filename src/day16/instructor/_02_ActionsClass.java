@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-//NOTE: README2.md
+//NOTE: README2-Actions.md
 public class _02_ActionsClass {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = Driver.getDriver();

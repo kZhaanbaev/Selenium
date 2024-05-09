@@ -25,6 +25,7 @@ public class _01_iFrames {
         //4. access child iFrame - budget calc
         //input Transaction name and amount
         driver.switchTo().frame("parent-iframe");
+        //driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='note']")));
         driver.switchTo().frame("budget-tracker");
         driver.findElement(By.id("t-name")).sendKeys("MacBook");
         driver.findElement(By.id("t-amount")).sendKeys("1500");
