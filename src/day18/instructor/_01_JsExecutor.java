@@ -1,13 +1,12 @@
-package day17.instructor;
+package day18.instructor;
 
 import _utils.Driver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class _03_JsExecutor {
+public class _01_JsExecutor {
     public static void main(String[] args){
         WebDriver driver = Driver.getDriver();
-        driver.get("http://automation.techleadacademy.io/#/home");
+        driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
 
         //Scroll into view
 
@@ -16,5 +15,5 @@ public class _03_JsExecutor {
 
     }
 
-
+    //Class Task 1
 }
