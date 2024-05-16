@@ -1,6 +1,6 @@
-package day_18.student;
+package day_19.student;
 
-public class _01_ClassTask {
+public class __01_ClassTask {
     /**
      * 1. Create 2 methods in this class to handle basic math calculations
      *    divide(), multiply()

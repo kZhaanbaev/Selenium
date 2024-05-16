@@ -1,4 +1,4 @@
-package day_18.instructor;
+package day_19.instructor;
 
 public class __01_ClassTask_Solved {
     /**
