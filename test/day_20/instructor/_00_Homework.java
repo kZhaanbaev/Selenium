@@ -21,5 +21,18 @@ public class _00_Homework {
      *          4. " " (just an empty space)
      */
 
+    public String returnInitialsInCaps(String str){
+        if (str == null || str.equals(" "))
+            return "";
+
+        String[] arr = str.trim().split(" ");
+        String initials = "";
+        for (String each: arr){
+            initials += each.charAt(0);
+        }
+
+        return initials.toUpperCase();
+    }
+
 
 }
