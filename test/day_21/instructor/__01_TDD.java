@@ -1,5 +1,8 @@
 package day_21.instructor;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 //NOTE: ReadMe file first
 public class __01_TDD {
     //Test Driven Development
@@ -26,6 +29,26 @@ public class __01_TDD {
      *      create that method step by step to remove red errors.
      */
 
+    @Test
+    public void test01(){
+        String testText = "Tech Lead Academy";
+        String testLetter = "a";
+        int expectedCountA = 3;
 
+        __01_TDD data = new __01_TDD();
+        int actualCountA = data.getCountOfLetters(testLetter, testText);
+
+        Assert.assertEquals(actualCountA, expectedCountA);
+    }
+
+    public int getCountOfLetters(String letter, String text){
+        int count = 0;
+        String[] arr = text.split("");
+        for (String each: arr){
+            if (each.equalsIgnoreCase(letter))
+                count++;
+        }
+        return count;
+    }
 
 }

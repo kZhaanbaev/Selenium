@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class _01_ClassTaskTest_Review {
@@ -15,12 +16,16 @@ public class _01_ClassTaskTest_Review {
      * - Navigate to https://selenium-practice-app.herokuapp.com/?#/home
      * - Verify title of the page is "TLA Automation"
      */
-    @Test
-    public void test01(){
+    @Test(testName = "Title test", description = "Verify title of the page is \"TLA Automation\"",
+    priority = 1)
+    public void test01(Method method){
+        Test test = method.getAnnotation(Test.class);
+        System.out.println(test.description());
+
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
         Assert.assertEquals(driver.getTitle(), "TLA Automation");
-        driver.close();
+        Driver.closeDriver();
     }
 
 
@@ -29,7 +34,7 @@ public class _01_ClassTaskTest_Review {
      * - Navigate to https://selenium-practice-app.herokuapp.com/?#/home
      * - Verify there are 18 navigation buttons
      */
-    @Test
+    @Test(testName = "Nav buttons test")
     public void test02(){
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
@@ -37,7 +42,7 @@ public class _01_ClassTaskTest_Review {
         List<WebElement> elements = driver.findElements(By.xpath("//a[contains(@class, 'navbar-brand')]"));
         Assert.assertEquals(elements.size(), 18);
 
-        driver.close();
+        Driver.closeDriver();
     }
 
 
@@ -45,14 +50,14 @@ public class _01_ClassTaskTest_Review {
      * - Navigate to https://selenium-practice-app.herokuapp.com/?#/home
      * - Verify footer of the page contains text "Tech Lead Academy"
      */
-    @Test
+    @Test(testName = "Footer text test", enabled = false)
     public void test03(){
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
 
         Assert.assertTrue(driver.findElement(By.id("copyright")).getText().contains("Tech Lead Academy"));
 
-        driver.close();
+        Driver.closeDriver();
     }
 
 
@@ -68,7 +73,7 @@ public class _01_ClassTaskTest_Review {
      *      Saucedemo
      *      Shopping Cart
      */
-    @Test
+    @Test(testName = "External Links test", priority = -1)
     public void test04(){
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
@@ -81,7 +86,7 @@ public class _01_ClassTaskTest_Review {
         Assert.assertTrue(driver.findElement(By.linkText("Saucedemo")).isEnabled());
         Assert.assertTrue(driver.findElement(By.linkText("Shopping Cart")).isEnabled());
 
-        driver.close();
+        Driver.closeDriver();
     }
 
 
