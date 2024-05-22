@@ -94,7 +94,20 @@ public class _02_DataProviders {
     }
 
 
-    //ClassTask 1
+    //Class Task 1
 
+    @DataProvider
+    public Object[] colorsArr(){
+        Object[] arr = new Object[3];
+        arr[0] = "yellow";
+        arr[1] = "blue";
+        arr[2] = "white";
+        return arr;
+    }
+
+    @Test(dataProvider = "colorsArr", testName = "some test")
+    public void printTest(String color){
+        System.out.println(color);
+    }
 
 }
