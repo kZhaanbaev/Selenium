@@ -35,7 +35,9 @@ public class _03_DataProviders {
         driver.get("https://selenium-practice-app.herokuapp.com/?#/home");
         driver.findElement(By.linkText(linkName)).click();
         Assert.assertEquals(driver.getCurrentUrl(), URL);
-        Driver.closeDriver();
+
+        //driver.getWindowHandles();
+        Driver.quitDriver();
     }
 
 
