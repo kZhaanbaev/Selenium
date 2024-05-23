@@ -17,18 +17,18 @@ public class _02_ClassTask {
      * US202: Verify sum of numbers
      * 1. Navigate to https://selenium-practice-app.herokuapp.com/?#/inputs
      * 2. Enter "5" in number a field
-     * 3. Enter "18" in number b field
+     * 3. Enter "34" in number b field
      * 3. Click 'Get Total'
-     * 4. Verify sum is "23"
+     * 4. Verify sum is "39"
      */
 
     /**
      * US203: Verify sum of numbers
      * 1. Navigate to https://selenium-practice-app.herokuapp.com/?#/inputs
-     * 2. Enter "5" in number a field
+     * 2. Enter "50" in number a field
      * 3. Enter "18" in number b field
      * 3. Click 'Get Total'
-     * 4. Verify sum is "23"
+     * 4. Verify sum is "68"
      */
 
 
