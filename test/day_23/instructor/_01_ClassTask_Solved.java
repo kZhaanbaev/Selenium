@@ -22,11 +22,11 @@ public class _01_ClassTask_Solved {
     @Test(testName = "US101: Verify Input message")
     public void test01(){
         WebDriver driver = Driver.getDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://selenium-practice-app.herokuapp.com/?#/inputs");
         driver.findElement(By.id("message")).sendKeys("Java is hard");
         driver.findElement(By.name("button1")).click();
         Assert.assertEquals(driver.findElement(By.name("message1")).getText(), "Java is hard");
+        Driver.closeDriver();
     }
 
     /**
@@ -39,11 +39,11 @@ public class _01_ClassTask_Solved {
     @Test(testName = "US101: Verify Input message")
     public void test02(){
         WebDriver driver = Driver.getDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://selenium-practice-app.herokuapp.com/?#/inputs");
         driver.findElement(By.id("message")).sendKeys("It's possible to get better in Java");
         driver.findElement(By.name("button1")).click();
-        Assert.assertEquals(driver.findElement(By.name("message1")).getText(), "Java is hard");
+        Assert.assertEquals(driver.findElement(By.name("message1")).getText(), "It's possible to get better in Java");
+        Driver.closeDriver();
     }
 
     /**
@@ -56,11 +56,11 @@ public class _01_ClassTask_Solved {
     @Test(testName = "US101: Verify Input message")
     public void test03(){
         WebDriver driver = Driver.getDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://selenium-practice-app.herokuapp.com/?#/inputs");
         driver.findElement(By.id("message")).sendKeys("I have to try harder to get better");
         driver.findElement(By.name("button1")).click();
-        Assert.assertEquals(driver.findElement(By.name("message1")).getText(), "Java is hard");
+        Assert.assertEquals(driver.findElement(By.name("message1")).getText(), "I have to try harder to get better");
+        Driver.closeDriver();
     }
 
 
