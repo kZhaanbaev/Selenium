@@ -46,7 +46,7 @@ public class _03_ClassTask_Solved {
      * 3. Click Submit
      * 4. Verify information is populated on the table below
      */
-    @Test(testName = "US301: Verify Instructor registration")
+    @Test(testName = "US301: Verify Mentor registration")
     public void test02(){
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
@@ -70,7 +70,7 @@ public class _03_ClassTask_Solved {
      * 3. Click Submit
      * 4. Verify information is populated on the table below
      */
-    @Test(testName = "US301: Verify Instructor registration")
+    @Test(testName = "US301: Verify Student registration")
     public void test03(){
         WebDriver driver = Driver.getDriver();
         driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
