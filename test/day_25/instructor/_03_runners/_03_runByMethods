@@ -1,0 +1,10 @@
+Demo: run following methods only under day_23/instructor package:
+    _01_ClassTask_Solved -> test01 and test02
+    _05_ClassTask_Solved -> test02
+    _07_ClassTask_Solved -> test01
+
+Class Task:
+    Create a runner file in _01_runnersTasks package
+    Run only following methods under day_20/student package
+        _01_ClassTask -> test01
+        _03_ClassTask -> test02

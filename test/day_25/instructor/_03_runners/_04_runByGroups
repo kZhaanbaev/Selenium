@@ -1,0 +1,7 @@
+Demo:
+Add test groups annotations such "smoke" and regression" to some methods in classes under
+day_23/instructor package and run them by groups
+
+Task:
+Add test groups annotations such "smoke" and regression" to some methods in classes under
+day_23/student package and run them by groups
