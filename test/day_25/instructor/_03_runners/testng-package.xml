@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="day23">
+    <test name="Data Provider Tests">
+        <packages>
+            <package name="day_23.instructor"></package>
+        </packages>
+    </test>
+</suite>

@@ -18,14 +18,14 @@ import java.util.concurrent.TimeUnit;
 public class UserMgtPageTests {
     WebDriver driver = null;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp(){
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         Driver.quitDriver();
     }
