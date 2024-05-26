@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -14,10 +16,22 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class UserMgtPageTests {
+    WebDriver driver = null;
+
+    @BeforeMethod
+    public void setUp(){
+        driver = Driver.getDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
+    }
+
+    @AfterMethod
+    public void tearDown(){
+        Driver.quitDriver();
+    }
+
     @Test(testName = "US301: Verify Mentor registration")
     public void test01(){
-        WebDriver driver = Driver.getDriver();
-        driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
         driver.findElement(By.id("Firstname")).sendKeys("John");
         driver.findElement(By.id("Lastname")).sendKeys("Smith");
         driver.findElement(By.id("Phonenumber")).sendKeys("123-456-7890");
@@ -27,14 +41,10 @@ public class UserMgtPageTests {
         driver.findElement(By.id("submit-btn")).click();
 
         Assert.assertTrue(driver.findElement(By.xpath("//tbody/tr")).isDisplayed());
-        Driver.closeDriver();
     }
 
     @Test(testName = "US401: Verify new user added to the staging table can be erased")
     public void test02(){
-        WebDriver driver = Driver.getDriver();
-        driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
-
         _04_ClassTask_Solved task4 = new _04_ClassTask_Solved();
         task4.fillOutRegistrationForm(
                 "John",
@@ -49,15 +59,10 @@ public class UserMgtPageTests {
         List<WebElement> list = driver.findElements(By.xpath("//tbody/tr"));
 
         Assert.assertEquals(list.size(), 0);
-        Driver.closeDriver();
     }
 
     @Test(testName = "US402: Verify new user is added to the database")
     public void test03(){
-        WebDriver driver = Driver.getDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("https://selenium-practice-app.herokuapp.com/?#/usermgt");
-
         _04_ClassTask_Solved task4 = new _04_ClassTask_Solved();
         task4.fillOutRegistrationForm(
                 "John",
@@ -78,7 +83,6 @@ public class UserMgtPageTests {
         }
 
         Assert.assertTrue(driver.findElement(By.xpath("//td[text()='johnsmith@test.com']")).isDisplayed());
-        Driver.quitDriver();
     }
 
     //Class Task 01
