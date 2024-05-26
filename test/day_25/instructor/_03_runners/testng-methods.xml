@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="day23">
+    <test name="Data Provider Tests">
+        <classes>
+            <class name="day_23.instructor._01_ClassTask_Solved">
+                <methods>
+                    <include name="test01"/>
+                    <include name="test03"/>
+                </methods>
+            </class>
+            <class name="day_23.instructor._05_ClassTask_Solved">
+                <methods>
+                    <include name="test02"/>
+                </methods>
+            </class>
+            <class name="day_23.instructor._07_ClassTask_Solved">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
