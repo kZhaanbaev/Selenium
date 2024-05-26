@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Class runs">
+    <test name="test">
+        <classes>
+            <class name="day_23.instructor._01_ClassTask_Solved" />
+            <class name="day_23.instructor._05_ClassTask_Solved" />
+            <class name="day_23.instructor._07_ClassTask_Solved" />
+        </classes>
+    </test>
+</suite>
