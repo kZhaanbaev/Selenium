@@ -19,7 +19,8 @@ public class _01_ClassTask {
      * 2. Input username: test@techleadacademy.sandbox
      * 3. Input password: tech-lead1!
      * 4. Click Accounts page button
-     * 5. Verify you can see more than 5 records
+     * 5. Click on All Accounts from the drop-down meny
+     * 6. Verify you can see more than 5 records
      */
 
     /**
