@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="suite">
+    <test name="test">
+        <parameter name="username" value="test@techleadacademy.sandbox"/>
+        <parameter name="pass" value="tech-lead1!"/>
+        <classes>
+            <class name="day_26.instructor._01_ClassTask_Solved" />
+        </classes>
+    </test>
+</suite>

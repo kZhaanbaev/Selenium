@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -26,13 +27,14 @@ public class _01_ClassTask_Solved {
      * 4. Click Accounts page button
      * 5. Verify you can see at least 1 record
      */
+    @Parameters({"username", "pass"})
     @Test(testName = "US2601: Verify Accounts - Recent items")
-    public void test01(){
+    public void test01(String username, String pass){
         WebDriver driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://techleadacademy-dev-ed.develop.lightning.force.com/lightning/page/home");
-        driver.findElement(By.id("username")).sendKeys("test@techleadacademy.sandbox");
-        driver.findElement(By.id("password")).sendKeys("tech-lead1!");
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(pass);
         driver.findElement(By.id("Login")).click();
 
         driver.findElement(By.xpath("//a[@title='Accounts']/parent::one-app-nav-bar-item-root")).click();
